@@ -1,0 +1,282 @@
+ /* Reset Bootstrap dropdown positioning */
+    .dropdown-menu {
+        position: absolute;
+    }
+    
+    /* Custom diploma submenu container */
+    .diploma-submenu {
+        padding: 0 !important;
+    }
+    
+    /* Hide the custom dropdown by default */
+    .diploma-dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        min-width: 200px;
+        background-color: white;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 0.25rem;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
+        z-index: 1001;
+        padding: 0.5rem 0;
+    }
+    
+    /* Show on hover */
+    .diploma-submenu:hover .diploma-dropdown-menu {
+        display: block;
+    }
+    
+    /* Style for the diploma item */
+    .diploma-submenu > div:first-child {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    /* Arrow symbol styling */
+    .dropdown-toggle-symbol {
+        transform: rotate(90deg);
+        font-size: 1.2rem;
+        color: #6c757d;
+        margin-left: 10px;
+    }
+    
+    /* Style links inside custom dropdown */
+    .diploma-dropdown-menu .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+    }
+    
+    .diploma-dropdown-menu .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #16181b;
+    }
+    
+    /* Adjust positioning for better alignment */
+    .diploma-dropdown-menu .dropdown-item {
+        text-align: left;
+        padding-left: 1.5rem;
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 991.98px) {
+        .diploma-dropdown-menu {
+            position: static;
+            left: 0;
+            top: auto;
+            box-shadow: none;
+            border: none;
+            border-left: 2px solid #dee2e6;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dropdown-toggle-symbol {
+            transform: rotate(0deg);
+        }
+        
+        /* Make sure it's visible on mobile */
+        .diploma-submenu .diploma-dropdown-menu {
+            display: none;
+        }
+        
+        /* Show on click for mobile - using Bootstrap's data attributes */
+        .diploma-submenu.active .diploma-dropdown-menu {
+            display: block;
+        }
+    }
+/* OVERRIDE BOOTSTRAP OVERLAY ISSUES */
+#carouselId .carousel-item {
+    background: transparent !important;
+}
+
+#carouselId .carousel-inner {
+    background: transparent !important;
+}
+
+#carouselId .carousel-item::before {
+    content: none !important;
+}
+
+#carouselId .carousel-item img {
+    position: relative;
+    z-index: 10;
+}
+
+/* Remove any caption remnants */
+.carousel-caption {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Make sure there's no overlay on controls either */
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 20;
+}
+
+/* RESPONSIVE CAROUSEL HEIGHT */
+#carouselId {
+    height: 70vh; /* 70% of viewport height */
+    max-height: 800px;
+    min-height: 300px;
+    min-width: auto;
+    max-width: auto;
+    overflow: hidden;
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+}
+
+/* Keep full image in frame without cropping */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This keeps the entire image visible */
+    object-position: center center;
+    background-color: #000; /* Optional: Add background color if images don't fill space */
+}
+
+ 
+    /* Additional styles for about page */
+    .feature-card {
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        height: 100%;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .icon-box {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .timeline-item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #0d6efd;
+    }
+    
+    .partner-logo {
+        height: 60px;
+        margin: 10px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+    }
+    
+    .partner-logo:hover {
+        filter: grayscale(0%);
+    }
+    
+    .affiliation-badge {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-left: 4px solid #0d6efd;
+    }
+
+/* Add these styles to your existing CSS */
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.hover-shadow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-img-top img {
+    transition: transform 0.5s ease;
+}
+
+.hover-shadow:hover .card-img-top img {
+    transform: scale(1.05);
+}
+
+/* Custom Styles for Service Cards */
+.hover-shadow-lg:hover {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  transform: translateY(-8px);
+  transition: all 0.3s ease;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.card-img-top .transition-transform {
+  transition: transform 0.5s ease;
+}
+
+/* Badge styling */
+.badge.bg-light {
+  border: 1px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.badge.bg-light:hover {
+  background-color: #0d6efd !important;
+  color: white !important;
+  border-color: #0d6efd;
+}
+
+/* Button styling */
+.btn-outline-primary {
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Stats cards hover effect */
+.shadow-sm:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
